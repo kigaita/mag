@@ -30,8 +30,8 @@ namespace UwbItContest.Web.DependencyResolution {
                 scan => {
                     scan.TheCallingAssembly();
                     scan.WithDefaultConventions();
-                    scan.With(new ControllerConvention());
                     scan.LookForRegistries();
+                    scan.With(new ControllerConvention());
                 });
             For<IControllerFactory>().Use<ControllerFactory>();
             For<ModelValidatorProvider>().Use<FluentValidationModelValidatorProvider>();

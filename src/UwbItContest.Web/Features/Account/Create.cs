@@ -1,8 +1,6 @@
-﻿using System;
-using FluentValidation;
+﻿using FluentValidation;
 using MediatR;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Security;
 
 namespace UwbItContest.Web.Features.Account
 {
