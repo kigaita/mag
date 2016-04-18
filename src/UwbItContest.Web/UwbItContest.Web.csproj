@@ -173,6 +173,7 @@
     <Compile Include="Features\Account\Create.cs" />
     <Compile Include="Features\Account\UiController.cs" />
     <Compile Include="Features\Home\UiController.cs" />
+    <Compile Include="Features\User\UiController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -201,6 +202,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Features\Account\Create.cshtml" />
     <Content Include="Features\Shared\_LoginPartial.cshtml" />
+    <Content Include="Features\User\Index.cshtml" />
     <None Include="Scripts\jquery-2.2.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
