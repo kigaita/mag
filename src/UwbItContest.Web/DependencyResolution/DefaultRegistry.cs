@@ -16,6 +16,8 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace UwbItContest.Web.DependencyResolution {
+    using FluentValidation;
+    using FluentValidation.Mvc;
     using Infrastructure;
     using StructureMap.Configuration.DSL;
     using StructureMap.Graph;
@@ -32,6 +34,8 @@ namespace UwbItContest.Web.DependencyResolution {
                     scan.LookForRegistries();
                 });
             For<IControllerFactory>().Use<ControllerFactory>();
+            For<ModelValidatorProvider>().Use<FluentValidationModelValidatorProvider>();
+            For<IValidatorFactory>().Use<StructureMapValidatorFactory>();
         }
 
         #endregion

@@ -178,6 +178,8 @@
     </Compile>
     <Compile Include="Infrastructure\ControllerFactory.cs" />
     <Compile Include="Infrastructure\FeatureViewLocationRazorViewEngine.cs" />
+    <Compile Include="Infrastructure\StructureMapValidatorFactory.cs" />
+    <Compile Include="Infrastructure\ValidatorActionFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

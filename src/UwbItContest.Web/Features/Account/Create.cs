@@ -2,6 +2,7 @@
 using FluentValidation;
 using MediatR;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Security;
 
 namespace UwbItContest.Web.Features.Account
 {
@@ -21,9 +22,9 @@ namespace UwbItContest.Web.Features.Account
         {
             public Validator()
             {
-                RuleFor(c => c.Password).Matches(c => c.AgainPassword);
-                RuleFor(c => c.AgainPassword).Matches(c => c.Password);
-                RuleFor(c => c.Email).EmailAddress();
+                RuleFor(c => c.Password).Length(6, 15).NotEmpty();
+                RuleFor(c => c.AgainPassword).Equal(c => c.Password).NotEmpty();
+                RuleFor(c => c.Email).EmailAddress().NotEmpty();
             }
         }
 
@@ -31,7 +32,6 @@ namespace UwbItContest.Web.Features.Account
         {
             protected override void HandleCore(Command message)
             {
-                
             }
         }
     }
