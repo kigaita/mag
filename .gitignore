@@ -22,8 +22,10 @@ bld/
 *.ide/
 
 #VS
-
 .vs/
+
+#Resharper
+.idea/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
