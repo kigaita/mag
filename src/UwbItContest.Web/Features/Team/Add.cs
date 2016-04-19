@@ -18,7 +18,7 @@ namespace UwbItContest.Web.Features.Team
         {
             public Validator()
             {
-                RuleFor(c => c.TeamName).NotEmpty().Length(5, 10);
+                RuleFor(c => c.TeamName).Length(5, 10).NotEmpty();
             }
         }
 

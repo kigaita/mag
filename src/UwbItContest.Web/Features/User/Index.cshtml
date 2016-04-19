@@ -13,7 +13,7 @@
                 Drużyny użytkownika
 
                 <div class="btn-group" role="group" aria-label="...">
-                    <button type="button" class="btn btn-default">Dodaj</button>
+                    @Html.ActionLink("Dodaj", "Add", "Team", null, new { @class = "btn btn-default" })
                     <button type="button" class="btn btn-default">Edytuj</button>
                     <button type="button" class="btn btn-default">Usuń</button>
                 </div>

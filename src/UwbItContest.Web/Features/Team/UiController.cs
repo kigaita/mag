@@ -7,6 +7,7 @@ namespace UwbItContest.Web.Features.Team
         public ActionResult Add() => View();
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Add(Add.Command command)
         {
             return RedirectToAction("Index", "User");

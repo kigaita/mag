@@ -10,6 +10,6 @@ namespace UwbItContest.Web.Infrastructure
             StructuremapMvc
                 .StructureMapDependencyScope
                 .CurrentNestedContainer
-                .TryGetInstance<IValidator>();
+                .GetInstance(validatorType) as IValidator;
     }
 }
