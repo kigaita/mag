@@ -17,6 +17,7 @@
 
 
 
+
 namespace UwbItContest.Web.DependencyResolution {
     using FluentValidation;
     using FluentValidation.Mvc;
@@ -24,6 +25,8 @@ namespace UwbItContest.Web.DependencyResolution {
     using System.Web.Mvc;
     using StructureMap;
     using StructureMap.Graph;
+    using StructureMap.Pipeline;
+    using DAL;
 
     public class DefaultRegistry : Registry {
         #region Constructors and Destructors
@@ -39,6 +42,7 @@ namespace UwbItContest.Web.DependencyResolution {
             For<IControllerFactory>().Use<ControllerFactory>();
             For<ModelValidatorProvider>().Use<FluentValidationModelValidatorProvider>();
             For<IValidatorFactory>().Use<StructureMapValidatorFactory>();
+            For<UwbContestContext>().Use(c => new UwbContestContext("UwbContestContext")).LifecycleIs<TransientLifecycle>();
         }
 
         #endregion

@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using FluentValidation;
 using MediatR;
+using UwbItContest.Web.DAL;
 
 namespace UwbItContest.Web.Features.Team
 {
@@ -24,9 +25,16 @@ namespace UwbItContest.Web.Features.Team
 
         public class CommandHandler : RequestHandler<Command>
         {
+            private readonly UwbContestContext _db;
+
+            public CommandHandler(UwbContestContext db)
+            {
+                _db = db;
+            }
+
             protected override void HandleCore(Command message)
             {
-                
+                _db.Teams.Add();
             }
         }
     }
