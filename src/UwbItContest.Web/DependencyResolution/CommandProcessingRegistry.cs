@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 using MediatR;
-using StructureMap.Configuration.DSL;
+using StructureMap;
 
 namespace UwbItContest.Web.DependencyResolution
 {

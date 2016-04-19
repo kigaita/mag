@@ -15,13 +15,16 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
+
+
 namespace UwbItContest.Web.DependencyResolution {
     using FluentValidation;
     using FluentValidation.Mvc;
     using Infrastructure;
-    using StructureMap.Configuration.DSL;
-    using StructureMap.Graph;
     using System.Web.Mvc;
+    using StructureMap;
+    using StructureMap.Graph;
+
     public class DefaultRegistry : Registry {
         #region Constructors and Destructors
 
