@@ -12,6 +12,18 @@ namespace UwbItContest.Web.Features.Account
             this.mediator = mediator;
         }
 
+        public ActionResult Login() => View();
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(Login.Command command)
+        {
+            var result = mediator.Send(command);
+            
+
+            return RedirectToAction("Index", "Home");
+        }
+
         public ActionResult Create() => View();
 
         [HttpPost]

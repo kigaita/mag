@@ -10,7 +10,7 @@ namespace UwbItContest.Web.Features.Team
         {
             [Display(Name = "Nazwa drużyny")]
             public string TeamName { get; set; }
-            [Display(Name = "Czy użytkownicy mogą dodawać się bez zgody?")]
+            [Display(Name = "Czy użytkownicy mogą dodawać się bez twojej zgody?")]
             public bool CanAddTeamMembersImmidiately { get; set; }
         }
 

@@ -20,14 +20,35 @@
 
             </div>
             <div class="panel-body">
-                Tutaj druzyny
+                <table id="teams" class="cell-border" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>
+                                Id
+                            </th>
+                            <th>
+                                Nazwa
+                            </th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>
+                                Id 
+                            </th>
+                            <th>
+                                Nazwa
+                            </th>
+                        </tr>
+                    </tfoot>
+                </table>
             </div>
         </div>
     </div>
 </div>
 <div class="row">
     <div class="col-md-12">
-        
+
         <div class="panel panel-default">
             <div class="panel-heading">
                 Drużyny do których użytkownik należy
@@ -44,3 +65,14 @@
         </div>
     </div>
 </div>
+
+@section head
+{
+    <link href="~/Content/datatables.min.css" rel="stylesheet" />
+}
+
+@section scripts
+{
+    <script src="~/Scripts/datatables.min.js"></script>
+    <script src="~/Features/User/Index.js"></script>
+}
