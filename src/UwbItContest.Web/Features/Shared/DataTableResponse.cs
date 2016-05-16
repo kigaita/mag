@@ -11,29 +11,30 @@ namespace UwbItContest.Web.Features.Shared
     {
         private DataTableResponse(object data)
         {
-            Data = data;
+            this.data = data;
         }
 
-        public object Data { get; set; }
+        public object data { get; set; }
 
-        public static DataTableResponse<T> Create(IReadOnlyList<T> data)
+        public static DataTableResponse<T> Create(IReadOnlyList<T> dataToPopulate)
         {
-            var arrays = new object[data.Count];
+            var arrays = new object[dataToPopulate.Count];
 
-            for (int i = 0; i < data.Count; i++)
+            for (int i = 0; i < dataToPopulate.Count; i++)
             {
                 var i1 = i;
                 arrays[i] =
-                    data[i].GetType().GetProperties().Select(p => p.GetValue(data[i1])).Select(v => v.ToString());
+                    dataToPopulate[i]
+                        .GetType()
+                        .GetProperties()
+                        .Select(p => p.GetValue(dataToPopulate[i1]))
+                        .Select(v => v.ToString());
             }
 
             return new DataTableResponse<T>(arrays);
         }
 
-        public static DataTableResponse<T> Create(IEnumerable<T> data)
-        {
-            return Create(data.ToList());
-        }
+        public static DataTableResponse<T> Create(IEnumerable<T> dataToPopulate) => Create(dataToPopulate.ToList());
     }
 
     public class DataTableReponseJsonConverter : JsonConverter
